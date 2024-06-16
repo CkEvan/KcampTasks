@@ -1,0 +1,151 @@
+Name: Chika Ezimorah
+ID: : KC-STD-554
+
+TASK: 2
+As a DevOps Engineer, you have been consulted to set up the infrastructure servers of a small business. 
+Create users, and assign them to groups
+Create Company directories and assign the right access to the right groups
+
+SOLUTION
+
+Setting Up the Environment and User Accounts
+
+1. Spin up the virtual environment:
+  Navigate to the project directory and use the command:
+     vagrant up
+   
+
+2. Create a user account for the DevOps Engineer Chika. Use the following command to create a user named Chika with the comment "DevOps Engineer":
+
+   sudo adduser -c "DevOps Engineer" chika
+  
+
+3. Assign a password to the user Chika:   
+   sudo passwd chika
+  
+
+4. Grant sudo privileges to Chika:
+   
+   sudo usermod -aG sudo chika
+  
+
+5. Log into Chika's account:
+  
+   su chika
+  
+
+User and Group Management
+
+1. Create users and assign comments:
+ 
+   sudo useradd -c "System Administrator" andrew
+   sudo useradd -c "Legal" julius
+   sudo useradd -c "Human Resource Manager" chizi
+   sudo useradd -c "Sales Manager" jeniffer
+   sudo useradd -c "Business Strategist" adeola
+   sudo useradd -c "CEO" bach
+   sudo useradd -c "IT intern" gozie
+   sudo useradd -c "Finance Manager" ogochukwu
+  
+
+2. Assign passwords to each user:
+   
+   sudo passwd andrew
+   sudo passwd julius
+   sudo passwd chizi
+   sudo passwd jeniffer
+   sudo passwd adeola
+   sudo passwd bach
+   sudo passwd gozie
+   sudo passwd ogochukwu
+
+
+3. Create groups and add users to appropriate groups:
+   
+   sudo groupadd IT_Team
+   sudo usermod -aG IT_Team gozie
+   sudo usermod -aG IT_Team andrew
+
+   sudo groupadd Legal_Team
+   sudo usermod -aG Legal_Team julius
+
+   sudo groupadd Sales_Team
+   sudo usermod -aG Sales_Team jeniffer
+
+   sudo groupadd HR
+   sudo usermod -aG HR chizi
+
+   sudo groupadd Business_Team
+   sudo usermod -aG Business_Team adeola
+
+   sudo groupadd Finance_Team
+   sudo usermod -aG Finance_Team ogochukwu
+  
+
+4. Confirm user and group creation:
+   
+   cat /etc/passwd
+   cat /etc/group
+ 
+
+Creating Directories for Kode Camp Stores Architecture
+
+1. Create the main directory and subdirectories:
+   
+   mkdir KodeCamp_Scores
+   cd KodeCamp_Scores
+
+   mkdir Finance_Budgets
+   mkdir Contract_Documents
+   mkdir Business_Projections
+   mkdir Business_Models
+   mkdir Employee_Data
+   mkdir CompanyVision_MissionStatement
+   mkdir Server_Configuration.Script
+  
+
+Assigning Directory Permissions
+
+1. Assign group ownership to directories:
+  
+   sudo chown -R :Finance_Team ./Finance_Budgets
+   sudo chown -R :Legal_Team ./Contract_Documents
+   sudo chown -R :Sales_Team ./Business_Projections
+   sudo chown -R :Business_Team ./Business_Models
+   sudo chown -R :HR ./Employee_Data
+   sudo chown -R :HR ./CompanyVision_MissionStatement
+   sudo chown -R :IT_Team ./Server_Configuration.Script
+  
+
+2. Verify directory permissions:
+ 
+   ls -ld Finance_Budgets/
+ 
+
+Implementing Sticky Bits
+
+1. Apply sticky bit to each directory to prevent users from deleting each other's files:
+
+   sudo chmod +t ./Server_Configuration.Script/
+   sudo chmod +t ./CompanyVision_MissionStatement/
+   sudo chmod +t ./Employee_Data/
+   sudo chmod +t ./Business_Models/
+   sudo chmod +t ./Business_Projections/
+   sudo chmod +t ./Contract_Documents/
+   sudo chmod +t ./Finance_Budgets/
+
+
+2. Verify the sticky bit setting:
+ 
+   ls -ld ./Server_Configuration.Script/
+
+
+Following the above steps, I was able to set up the environment, create users, assign them to groups, create necessary directories, assign permissions, and ensure directory security with sticky bits.
+
+
+
+
+
+
+
+
