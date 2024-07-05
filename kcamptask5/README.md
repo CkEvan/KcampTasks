@@ -12,6 +12,8 @@ Steps to Create and Configure the VPC
 VPC Name: KCVPC
 IPv4 CIDR Block: 10.0.0.0/16
 
+Screenshot []
+
 2. Create Subnets
 Public Subnet
 Name: PublicSubnet
@@ -23,10 +25,13 @@ Name: PrivateSubnet
 IPv4 CIDR Block: 10.0.2.0/24
 Availability Zone: Same as Public Subnet (e.g., eu-west-1a)
 
+Screenshot []
+
 3. Configure an Internet Gateway (IGW)
 Create IGW
 Attach IGW to KCVPC
 
+Screenshot []
 
 4. Configure Route Tables
 Public Route Table
@@ -40,12 +45,16 @@ Name: PrivateRouteTable
 Associated Subnet: PrivateSubnet
 Route: No direct route to the internet initially
 
+Screenshot []
+
 5. Configure NAT Gateway
 NAT Gateway Location: PublicSubnet
 Elastic IP Allocation: Allocate a new Elastic IP
 
 Update PrivateRouteTable to Route Traffic to NAT Gateway
 Route: 0.0.0.0/0 -> NAT Gateway
+
+Screenshot []
 
 6. Set Up Security Groups
 Public Security Group
@@ -62,6 +71,8 @@ MySQL (Port 3306) from PublicSubnet
 Allow Outbound:
 All traffic
 
+Screenshot []
+
 7. Configure Network ACLs (NACLs)
 Public Subnet NACL
 Inbound Rules:
@@ -77,6 +88,8 @@ Allow traffic from Public Subnet
 Outbound Rules:
 Allow traffic to Public Subnet and internet
 
+Screenshot []
+
 8. Deploy Instances
 EC2 Instance in PublicSubnet
 Security Group: Public Security Group
@@ -85,6 +98,8 @@ Verification: Ensure access via the internet
 EC2 Instance in PrivateSubnet
 Security Group: Private Security Group
 Verification: Ensure internet access through the NAT Gateway and communication with the public instance
+
+Screenshots []
 
 Explanation of Components
 Virtual Private Cloud (VPC)
@@ -110,5 +125,3 @@ Additional layer of security that acts as a firewall for controlling traffic in 
 
 Conclusion
 This setup ensures a secure and efficient network architecture within AWS, with clearly defined roles and communication paths for public and private instances. By following these steps, I was able to implement a robust VPC configuration suitable for various applications.
-
-Screenshots []
