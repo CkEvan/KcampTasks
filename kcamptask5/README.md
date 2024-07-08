@@ -9,7 +9,6 @@ To design and implement a secure and efficient network architecture using AWS se
 ![Architecture Diagram](image.png)
 
 
-
 ## Steps to Create and Configure the VPC
 
 1. **Create a VPC**
@@ -17,7 +16,7 @@ To design and implement a secure and efficient network architecture using AWS se
    - VPC Name: KCVPC
    - IPv4 CIDR Block: 10.0.0.0/16
    
-   ![VPC Screenshot](image.png)
+   ![VPC Screenshot](image-1.png)
  
 
 
@@ -34,7 +33,7 @@ To design and implement a secure and efficient network architecture using AWS se
      - IPv4 CIDR Block: 10.0.2.0/24
      - Availability Zone: Same as Public Subnet (e.g., eu-west-1a)
    
-   ![Public and Private Subnet Screenshot](image-1.png)
+   ![Public and Private Subnet Screenshot](image-2.png)
    
 
 
@@ -59,7 +58,7 @@ To design and implement a secure and efficient network architecture using AWS se
      - Associated Subnet: PrivateSubnet
      - Route: No direct route to the internet initially
    
-   ![Public and Private Route Tables Screenshot](image-3.png)
+   ![Public and Private Route Tables Screenshot](image-10.png)
    
 
 5. **Configure NAT Gateway**
@@ -70,7 +69,7 @@ To design and implement a secure and efficient network architecture using AWS se
    Update PrivateRouteTable to Route Traffic to NAT Gateway:
    - Route: 0.0.0.0/0 -> NAT Gateway
    
-   ![NAT Gateway Screenshot](image-4.png)
+   ![NAT Gateway Screenshot](image-9.png)
    
 
 
@@ -83,7 +82,7 @@ To design and implement a secure and efficient network architecture using AWS se
        - SSH (Port 22) from your specific IP
      - Allow Outbound: All traffic
      
-     ![Public Security Group Screenshot](image-5.png)
+     ![Public Security Group Screenshot](image-8.png)
 
 
      
@@ -93,7 +92,7 @@ To design and implement a secure and efficient network architecture using AWS se
        - MySQL (Port 3306) from PublicSubnet
      - Allow Outbound: All traffic
      
-     ![Private Security Group Screenshot](image-6.png)
+     ![Private Security Group Screenshot](image-7.png)
 
 
 
@@ -112,7 +111,7 @@ To design and implement a secure and efficient network architecture using AWS se
      - Inbound Rules: Allow traffic from Public Subnet
      - Outbound Rules: Allow traffic to Public Subnet and internet
      
-     ![Private Subnet NACL Screenshot](image-7.png)
+     ![Private Subnet NACL Screenshot](image-5.png)
 
 
 
@@ -126,10 +125,10 @@ To design and implement a secure and efficient network architecture using AWS se
      - Security Group: Private Security Group
      - Verification: Ensure internet access through the NAT Gateway and communication with the public instance
    
-   ![EC2 Instances Screenshot](image-8.png)
+   ![EC2 Instances Screenshot](image-3.png)
 
 
-   ![EC2 Connection Screenshot](image-9.png)
+   ![EC2 Connection Screenshot](image-4.png)
 
 ## Explanation of Components
 
