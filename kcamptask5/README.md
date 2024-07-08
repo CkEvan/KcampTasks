@@ -26,7 +26,7 @@ Name: PrivateSubnet
 IPv4 CIDR Block: 10.0.2.0/24
 Availability Zone: Same as Public Subnet (e.g., eu-west-1a)
 
-Screenshot []
+(https://github.com/CkEvan/KcampTasks/blob/main/kcamptask5/Public%20and%20Private%20Subnet_ss.png)
 
 3. Configure an Internet Gateway (IGW)
 Create IGW
