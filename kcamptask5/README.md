@@ -13,7 +13,7 @@ Steps to Create and Configure the VPC
 VPC Name: KCVPC
 IPv4 CIDR Block: 10.0.0.0/16
 
-C:\Users\user\Desktop\KcampTasks\kcamptask5\KCVPC_Screenshot.png
+kcamptask5/KCVPC_Screenshot.png
 
 2. Create Subnets
 Public Subnet
@@ -32,7 +32,7 @@ Screenshot []
 Create IGW
 Attach IGW to KCVPC
 
-Screenshot []
+kcamptask5/Public and Private Subnet_ss.png
 
 4. Configure Route Tables
 Public Route Table
@@ -46,7 +46,7 @@ Name: PrivateRouteTable
 Associated Subnet: PrivateSubnet
 Route: No direct route to the internet initially
 
-Screenshot []
+kcamptask5/Pulic and Private Route Tables.png
 
 5. Configure NAT Gateway
 NAT Gateway Location: PublicSubnet
@@ -55,7 +55,7 @@ Elastic IP Allocation: Allocate a new Elastic IP
 Update PrivateRouteTable to Route Traffic to NAT Gateway
 Route: 0.0.0.0/0 -> NAT Gateway
 
-Screenshot []
+kcamptask5/NAT-KCVPC.png
 
 6. Set Up Security Groups
 Public Security Group
@@ -66,13 +66,15 @@ SSH (Port 22) from your specific IP
 Allow Outbound:
 All traffic
 
+kcamptask5/SG1-KCVPC.png
+
 Private Security Group
 Allow Inbound:
 MySQL (Port 3306) from PublicSubnet
 Allow Outbound:
 All traffic
 
-Screenshot []
+kcamptask5/SG2-KCVPC.png
 
 7. Configure Network ACLs (NACLs)
 Public Subnet NACL
@@ -89,7 +91,7 @@ Allow traffic from Public Subnet
 Outbound Rules:
 Allow traffic to Public Subnet and internet
 
-Screenshot []
+kcamptask5/NACLs.png
 
 8. Deploy Instances
 EC2 Instance in PublicSubnet
@@ -100,7 +102,7 @@ EC2 Instance in PrivateSubnet
 Security Group: Private Security Group
 Verification: Ensure internet access through the NAT Gateway and communication with the public instance
 
-Screenshots []
+kcamptask5/EC2-KCVPC.png
 
 Explanation of Components
 Virtual Private Cloud (VPC)
