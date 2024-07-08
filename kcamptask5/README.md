@@ -1,12 +1,12 @@
 # KCVPC Setup Documentation
 
-This README.md file provides detailed instructions and explanations on setting up a Virtual Private Cloud (VPC) in AWS with both public and private subnets, routing configurations, security groups, and network access control lists (NACLs).
+This is a detailed instructions and explanations on setting up a Virtual Private Cloud (VPC) in AWS with both public and private subnets, routing configurations, security groups, and network access control lists (NACLs).
 
 ## Objective
 
 To design and implement a secure and efficient network architecture using AWS services, following best practices for communication and security within a VPC.
 
-[Architecture Diagram](https://excalidraw.com/#json=V4D6DiCTBiHE3fRp9jEQ-,68OksBXoF4dNBWtN8BTSgw)
+![Architecture Diagram](https://excalidraw.com/#json=V4D6DiCTBiHE3fRp9jEQ-,68OksBXoF4dNBWtN8BTSgw)
 
 ## Steps to Create and Configure the VPC
 
@@ -108,6 +108,9 @@ To design and implement a secure and efficient network architecture using AWS se
      - Verification: Ensure internet access through the NAT Gateway and communication with the public instance
    
    ![EC2 Instances Screenshot](https://github.com/CkEvan/KcampTasks/blob/main/kcamptask5/EC2-Instances.png)
+
+
+   ![EC2 Connection Screenshot](https://github.com/CkEvan/KcampTasks/blob/main/kcamptask5/EC2-connection.png)
 
 ## Explanation of Components
 
