@@ -8,6 +8,8 @@ To design and implement a secure and efficient network architecture using AWS se
 
 ![Architecture Diagram](image.png)
 
+
+
 ## Steps to Create and Configure the VPC
 
 1. **Create a VPC**
@@ -15,7 +17,10 @@ To design and implement a secure and efficient network architecture using AWS se
    - VPC Name: KCVPC
    - IPv4 CIDR Block: 10.0.0.0/16
    
-   ![VPC Screenshot](https://github.com/CkEvan/KcampTasks/blob/main/kcamptask5/KCVPC_Screenshot.png)
+   ![VPC Screenshot](image.png)
+ 
+
+
 
 2. **Create Subnets**
 
@@ -29,14 +34,18 @@ To design and implement a secure and efficient network architecture using AWS se
      - IPv4 CIDR Block: 10.0.2.0/24
      - Availability Zone: Same as Public Subnet (e.g., eu-west-1a)
    
-   ![Public and Private Subnet Screenshot](https://github.com/CkEvan/KcampTasks/blob/main/kcamptask5/Public%20and%20Private%20Subnet_ss.png)
+   ![Public and Private Subnet Screenshot](image-1.png)
+   
+
 
 3. **Configure an Internet Gateway (IGW)**
 
    - Create IGW
    - Attach IGW to KCVPC
    
-   ![IGW Screenshot](https://github.com/CkEvan/KcampTasks/blob/main/kcamptask5/IGW.png)
+   ![IGW Screenshot](image-2.png)
+
+
 
 4. **Configure Route Tables**
 
@@ -50,7 +59,8 @@ To design and implement a secure and efficient network architecture using AWS se
      - Associated Subnet: PrivateSubnet
      - Route: No direct route to the internet initially
    
-   ![Public and Private Route Tables Screenshot](https://github.com/CkEvan/KcampTasks/blob/main/kcamptask5/Public%20and%20Private%20Route%20Tables.png)
+   ![Public and Private Route Tables Screenshot](image-3.png)
+   
 
 5. **Configure NAT Gateway**
 
@@ -60,7 +70,9 @@ To design and implement a secure and efficient network architecture using AWS se
    Update PrivateRouteTable to Route Traffic to NAT Gateway:
    - Route: 0.0.0.0/0 -> NAT Gateway
    
-   ![NAT Gateway Screenshot](https://github.com/CkEvan/KcampTasks/blob/main/kcamptask5/NAT-Gateway.png)
+   ![NAT Gateway Screenshot](image-4.png)
+   
+
 
 6. **Set Up Security Groups**
 
@@ -71,14 +83,20 @@ To design and implement a secure and efficient network architecture using AWS se
        - SSH (Port 22) from your specific IP
      - Allow Outbound: All traffic
      
-     ![Public Security Group Screenshot](https://github.com/CkEvan/KcampTasks/blob/main/kcamptask5/SG1-KCVPC.png)
+     ![Public Security Group Screenshot](image-5.png)
+
+
+     
    
    - **Private Security Group**
      - Allow Inbound:
        - MySQL (Port 3306) from PublicSubnet
      - Allow Outbound: All traffic
      
-     ![Private Security Group Screenshot](https://github.com/CkEvan/KcampTasks/blob/main/kcamptask5/SG2-KCVPC.png)
+     ![Private Security Group Screenshot](image-6.png)
+
+
+
 
 7. **Configure Network ACLs (NACLs)**
 
@@ -89,13 +107,14 @@ To design and implement a secure and efficient network architecture using AWS se
        - Allow SSH (Port 22)
      - Outbound Rules: Allow all traffic
      
-     ![Public Subnet NACL Screenshot](https://github.com/CkEvan/KcampTasks/blob/main/kcamptask5/NACL-Public.png)
    
-   - **Private Subnet NACL**
+   - **Public and Private Subnet NACL**
      - Inbound Rules: Allow traffic from Public Subnet
      - Outbound Rules: Allow traffic to Public Subnet and internet
      
-     ![Private Subnet NACL Screenshot](https://github.com/CkEvan/KcampTasks/blob/main/kcamptask5/NACL-Private.png)
+     ![Private Subnet NACL Screenshot](image-7.png)
+
+
 
 8. **Deploy Instances**
 
@@ -107,10 +126,10 @@ To design and implement a secure and efficient network architecture using AWS se
      - Security Group: Private Security Group
      - Verification: Ensure internet access through the NAT Gateway and communication with the public instance
    
-   ![EC2 Instances Screenshot](https://github.com/CkEvan/KcampTasks/blob/main/kcamptask5/EC2-Instances.png)
+   ![EC2 Instances Screenshot](image-8.png)
 
 
-   ![EC2 Connection Screenshot](https://github.com/CkEvan/KcampTasks/blob/main/kcamptask5/EC2-connection.png)
+   ![EC2 Connection Screenshot](image-9.png)
 
 ## Explanation of Components
 
