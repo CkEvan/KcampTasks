@@ -6,7 +6,7 @@ This is a detailed instructions and explanations on setting up a Virtual Private
 
 To design and implement a secure and efficient network architecture using AWS services, following best practices for communication and security within a VPC.
 
-![Architecture Diagram](https://excalidraw.com/#json=V4D6DiCTBiHE3fRp9jEQ-,68OksBXoF4dNBWtN8BTSgw)
+![Architecture Diagram](image.png)
 
 ## Steps to Create and Configure the VPC
 
