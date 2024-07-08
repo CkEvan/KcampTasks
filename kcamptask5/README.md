@@ -5,14 +5,15 @@ This README.md file provides detailed instructions and explanations on setting u
 Objective
 To design and implement a secure and efficient network architecture using AWS services, following best practices for communication and security within a VPC.
 
-Architecture Diagram []
+https://excalidraw.com/#json=V4D6DiCTBiHE3fRp9jEQ-,68OksBXoF4dNBWtN8BTSgw
+Architecture Diagram 
 
 Steps to Create and Configure the VPC
 1. Create a VPC
 VPC Name: KCVPC
 IPv4 CIDR Block: 10.0.0.0/16
 
-Screenshot []
+C:\Users\user\Desktop\KcampTasks\kcamptask5\KCVPC_Screenshot.png
 
 2. Create Subnets
 Public Subnet
