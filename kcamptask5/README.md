@@ -129,7 +129,7 @@ Network Access Control Lists (NACLs)
 Additional layer of security that acts as a firewall for controlling traffic in and out of one or more subnets.
 
 Conclusion
-This setup ensures a secure and efficient network architecture within AWS, with clearly defined roles and communication paths for public and private instances. By following these steps, I was able to implement a robust VPC configuration suitable for various applications.
+This setup ensures a secure and efficient network architecture within AWS, with clearly defined roles and communication paths for public and private instances. I could implement a robust VPC configuration suitable for various applications by following these steps.
 
 
 [def]: https://github.com/CkEvan/KcampTasks/blob/main/kcamptask5/KCVPC_Screenshot.png
