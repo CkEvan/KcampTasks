@@ -128,7 +128,7 @@ To design and implement a secure and efficient network architecture using AWS se
    ![EC2 Instances Screenshot](image-3.png)
 
 
-   ![EC2 Connection Screenshot](image-4.png)
+   ![EC2 Connection Screenshot](image-11.png)
 
 ## Explanation of Components
 
