@@ -42,7 +42,7 @@ To design and implement a secure and efficient network architecture using AWS se
    - Create IGW
    - Attach IGW to KCVPC
    
-   ![IGW Screenshot](image-2.png)
+   ![IGW Screenshot](image-3.png)
 
 
 
@@ -58,7 +58,7 @@ To design and implement a secure and efficient network architecture using AWS se
      - Associated Subnet: PrivateSubnet
      - Route: No direct route to the internet initially
    
-   ![Public and Private Route Tables Screenshot](image-10.png)
+   ![Public and Private Route Tables Screenshot](image-4.png)
    
 
 5. **Configure NAT Gateway**
@@ -69,7 +69,7 @@ To design and implement a secure and efficient network architecture using AWS se
    Update PrivateRouteTable to Route Traffic to NAT Gateway:
    - Route: 0.0.0.0/0 -> NAT Gateway
    
-   ![NAT Gateway Screenshot](image-9.png)
+   ![NAT Gateway Screenshot](image-5.png)
    
 
 
@@ -82,7 +82,7 @@ To design and implement a secure and efficient network architecture using AWS se
        - SSH (Port 22) from your specific IP
      - Allow Outbound: All traffic
      
-     ![Public Security Group Screenshot](image-8.png)
+     ![Public Security Group Screenshot](image-6.png)
 
 
      
@@ -111,7 +111,7 @@ To design and implement a secure and efficient network architecture using AWS se
      - Inbound Rules: Allow traffic from Public Subnet
      - Outbound Rules: Allow traffic to Public Subnet and internet
      
-     ![Private Subnet NACL Screenshot](image-5.png)
+     ![Private Subnet NACL Screenshot](image-8.png)
 
 
 
@@ -125,10 +125,10 @@ To design and implement a secure and efficient network architecture using AWS se
      - Security Group: Private Security Group
      - Verification: Ensure internet access through the NAT Gateway and communication with the public instance
    
-   ![EC2 Instances Screenshot](image-3.png)
+   ![EC2 Instances Screenshot](image-9.png)
 
 
-   ![EC2 Connection Screenshot](image-11.png)
+   ![EC2 Connection Screenshot](image-10.png)
 
 ## Explanation of Components
 
